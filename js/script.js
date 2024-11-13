@@ -38,6 +38,11 @@ const teamMembers = [
 ];
 
 const teamContainerElem = document.querySelector(".team-container");
+const formElem = document.querySelector(".member-form")
+const nameInput = document.getElementById("full-name");
+const roleInput = document.getElementById("role");
+const emailInput = document.getElementById("email");
+const imgInput = document.getElementById("user-img");
 
 ////////////////
 // FUNCTIONS //
@@ -75,5 +80,30 @@ const renderTeam = () => {
   teamContainerElem.innerHTML = items;
 };
 
-// OUTPUT
+const handleSubmit = (event) => {
+  event.preventDefault();
+
+  const name = nameInput.value.trim();
+  const role = roleInput.value.trim();
+  const email = emailInput.value.trim();
+  const img = imgInput.value.trim();  
+
+
+  const newMember = {
+    name,
+    role,
+    email,
+    img
+  }
+
+  teamMembers.push(newMember);
+
+  renderTeam();
+
+  formElem.reset();
+};
+
+// Output
 renderTeam();
+
+formElem.addEventListener("submit", handleSubmit);
