@@ -50,17 +50,17 @@ const imgInput = document.getElementById("user-img");
 const createCard = (member) => {
   const {name, role, email, img} = member;
   return `
-      <div class="col-12 col-lg-4">  
+      <div class="col-12 col-md-6 col-lg-6 col-xl-4">  
         <div class="card mb-5 bg-black">
             <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="${img}" class="img-fluid rounded-start" alt="${name}" />
+                <div class="col-4 d-flex align-items-center">
+                    <img src="${img}" class="w-100 h-100 rounded-start" alt="${name}" />
                 </div>
-                <div class="col-md-8">
+                <div class="col-8 d-flexalign-items-center">
                     <div class="card-body ">
-                        <h2 class="card-title text-light text-uppercase fs-5">${name}</h2>
-                        <p class="card-text text-light fs-5">${role}</p>
-                        <a class="card-text text-decoration-none fs-54">${email}</a>
+                        <h2 class="card-title text-light text-uppercase fs-5 fw-bold">${name}</h2>
+                        <p class="card-text text-light">${role}</p>
+                        <a class="card-text text-decoration-none link-info">${email}</a>
                     </div>
                 </div>
             </div>
